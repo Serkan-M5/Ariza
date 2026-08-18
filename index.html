@@ -364,7 +364,7 @@
 
         currentFilteredData = database.filter(item => {
             const itemCode = normalizeText(item.code);
-            const matchesCode = !inputCode || itemCode.indexOf(inputCode) !== -1;
+            const matchesCode = !inputCode || itemCode === inputCode;
             const matchesGroup = !selectGroup || item.group === selectGroup;
             return matchesCode && matchesGroup;
         });
